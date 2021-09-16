@@ -15,7 +15,11 @@ class Aluno{
     function __get($atributo){
         return $this->$atributo;
     }
+
+    function getMedia(){
+        return ($this->nota1 + $this->nota2 + $this->nota3 + $this->nota4)/4;
+    }
 }
- 
+
 
 ?>

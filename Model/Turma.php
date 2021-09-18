@@ -1,21 +1,38 @@
 <?php
+	class Turma{
+		public $nome;
+		private $alunos=array();
+		public $media;
 
-class Turma {
-    public $nome = null;
-    public $alunos = null;
+        function __construct($nome){
+            
+            $this->nome=$nome;
+            echo 'Turma <b>'.$this->nome. ' </b>Criada <br>';
+            
+        }
 
-    function __set($atributo, $valor){
-        $this->$atributo = $valor;
-    }
+        function __set($atributo, $valor)
+        {
+            $this->$atributo = $valor;
+            
+        }
 
-    function __get($atributo){
-        return $this->$atributo;
-    }
-}
+        function __get($atributo)
+        {
+            return $this->$atributo;
+        }
 
-$Turma1 = new Turma();
-$Turma1->__set('nome','Turma A-150');
+        public function addAlunoTurma($aluno){              
+            $this->alunos[] = $aluno;
+        }
 
-$Turma1 = $Turma1->__get('nome');
+		public function getMediaTurma(){
+			return $this -> media = ($this-> alunos[0]->getMedia()+ 
+                   $this->alunos[1]->getMedia()+ 
+                   $this->alunos[2]->getMedia()+
+                   $this->alunos[3]->getMedia()+ 
+                   $this->alunos[4]->getMedia())/5;
+		}        
+	}
 
 ?>

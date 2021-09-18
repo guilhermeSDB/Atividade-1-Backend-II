@@ -94,7 +94,16 @@ include_once ('Dados/array.php');
                     ?>                       
                     </tbody>
                 </table>
-            </div>            
+            </div> 
+
+            <div class=row>
+                <div class="col-md-6">
+                    <span>Média da Turma</span>
+                </div>
+                <div class="col-md-6 text-end">
+                    <span class="text-danger"><b><?php echo $turma->getMediaTurma() ?></b></span>
+                </div>                
+            </div>           
         </div>
 
         <footer>
@@ -115,7 +124,7 @@ include_once ('Dados/array.php');
             "debug": true,
             "newestOnTop": false,
             "progressBar": true,
-            "positionClass": "toast-bottom-full-width",
+            "positionClass": "toast-top-full-width",
             "preventDuplicates": true,
             "onclick": null,
             "showDuration": "300",
